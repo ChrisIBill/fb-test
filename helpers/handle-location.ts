@@ -11,14 +11,10 @@ const HandleLocation = (
 	// we set the cookie to expire in 5 minutes and recheck — request by DSV
 	expDate.setMinutes(expDate.getMinutes() + 5)
 	updateLocationContext(newLocation)
-	setCookie(
-		'nearestLocation',
-		newLocation,
-		{
-			path: '/',
-			expires: expDate,
-		},
-	)
+	setCookie('nearestLocation', newLocation, {
+		path: '/',
+		expires: expDate,
+	})
 }
 
 export default HandleLocation

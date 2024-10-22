@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
 	name: 'route',
@@ -20,4 +20,4 @@ export default defineType({
 			to: [{ type: 'page' }],
 		}),
 	],
-});
+})

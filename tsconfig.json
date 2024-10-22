@@ -37,7 +37,10 @@
 		".next/types/**/*.ts",
 		"sanity/templates/menu-template-schema.js",
 		"sanity/structure/bottle-structure.js",
-		"sanity/structure/drink-structure.js"
-, "helpers/request-for-deletion.js", "sanity/components/select-all-locations.js", "sanity/components/select-all-locations.js"	],
+		"sanity/structure/drink-structure.js",
+		"helpers/request-for-deletion.js",
+		"sanity/components/select-all-locations.js",
+		"sanity/components/select-all-locations.js"
+	],
 	"exclude": ["node_modules"]
 }

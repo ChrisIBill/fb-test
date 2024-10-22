@@ -1,24 +1,24 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'defaultImage',
-  title: 'Image',
-  type: 'image',
-  options: {
+	name: 'defaultImage',
+	title: 'Image',
+	type: 'image',
+	options: {
 		hotspot: true,
 		metadata: ['lqip'],
 		collapsible: true,
 	},
-  fields: [
-    defineField({
-      name: 'alt',
-      title: 'Alternative Text',
-      type: 'string',
-      description: 'Important for accessibility and SEO',
-      validation: Rule => Rule.required().error('Alternative text is required')
-    })
-  ],
-  preview: {
+	fields: [
+		defineField({
+			name: 'alt',
+			title: 'Alternative Text',
+			type: 'string',
+			description: 'Important for accessibility and SEO',
+			validation: Rule => Rule.required().error('Alternative text is required'),
+		}),
+	],
+	preview: {
 		select: {
 			name: 'alt',
 			image: 'asset',
@@ -31,4 +31,4 @@ export default defineType({
 			}
 		},
 	},
-});
+})

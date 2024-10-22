@@ -1,8 +1,5 @@
 import { BasketIcon } from '@sanity/icons'
-import {
-	GiBubblingBowl,
-	GiMeat,
-} from 'react-icons/gi'
+import { GiBubblingBowl, GiMeat } from 'react-icons/gi'
 
 const Menu = (S, context) => {
 	return S.listItem()

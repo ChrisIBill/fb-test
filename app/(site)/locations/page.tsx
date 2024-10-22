@@ -13,26 +13,26 @@ import { PageType } from '@/types/documents/page-type'
 // Components
 import { urlFor } from '@/components/sanity-image/url'
 import LocationsPage from '@/components/pages/locations-page'
-import { metadata as defaultMetadata } from '@/app/(site)/layout';
+import { metadata as defaultMetadata } from '@/app/(site)/layout'
 
 export const generateMetadata = async (): Promise<Metadata> => {
-	const page = await client.fetch<PageType>(getPage, { slug: 'locations' });
-	const global = await client.fetch(getGlobal);
+	const page = await client.fetch<PageType>(getPage, { slug: 'locations' })
+	const global = await client.fetch(getGlobal)
 
 	// Use default metadata as a fallback
 	const result = {
 		title: page.seo?.metaTitle
 			? `${page.seo.metaTitle} | ${global[0].seo.metaTitle}`
 			: page.title
-			? `${page.title} | ${global[0].seo.metaTitle}`
-			: defaultMetadata.title,
+				? `${page.title} | ${global[0].seo.metaTitle}`
+				: defaultMetadata.title,
 		description: page.seo?.metaDesc
 			? page.seo.metaDesc
 			: defaultMetadata.description,
 		image: page.seo?.shareGraphic?.asset.url
 			? page.seo.shareGraphic.asset.url
 			: defaultMetadata.openGraph.images[0].url,
-	};
+	}
 
 	return {
 		metadataBase: defaultMetadata.metadataBase,
@@ -53,18 +53,12 @@ export const generateMetadata = async (): Promise<Metadata> => {
 		alternates: {
 			canonical: `/${page.slug}`,
 		},
-	};
-};
-
+	}
+}
 
 export default async function Home() {
 	const global = await client.fetch(getGlobal)
 	const navigation = await client.fetch(getNavigation)
 
-	return (
-		<LocationsPage
-			global={global}
-			navigation={navigation}
-		/>
-	)
+	return <LocationsPage global={global} navigation={navigation} />
 }

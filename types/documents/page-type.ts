@@ -10,15 +10,15 @@ export type PageType = {
 		current: string
 	}
 	seo: SeoType
-  navigation: {
-    title: string
-    navItems: {
-      title: string
-      route: {
-        slug: {
-          current: string
-        }
-      }
-    }[]
-  }
+	navigation: {
+		title: string
+		navItems: {
+			title: string
+			route: {
+				slug: {
+					current: string
+				}
+			}
+		}[]
+	}
 }

@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity'
 
-
 export const getMenu = groq`*[_type == "menu"]{
   _id,
   _createdAt,

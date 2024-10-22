@@ -18,7 +18,7 @@ export default defineConfig({
 	projectId,
 	dataset,
 	icon: WhiskeyCakeLogo,
-	
+
 	// Add and edit the content schema in the './sanity/schema' folder
 	schema: {
 		types: schemas,
@@ -26,7 +26,7 @@ export default defineConfig({
 	},
 	plugins: [
 		structureTool({
-			structure: deskStructure
+			structure: deskStructure,
 		}),
 		// Vision is a tool that lets you query your content with GROQ in the studio
 		// https://www.sanity.io/docs/the-vision-plugin

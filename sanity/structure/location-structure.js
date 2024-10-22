@@ -10,7 +10,6 @@ const Location = (S, context) => {
 				.menuItems(S.documentTypeList('location').getMenuItems())
 				.filter('_type == "location"')
 				.defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
-			
 		)
 }
 

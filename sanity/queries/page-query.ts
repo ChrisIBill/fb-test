@@ -1,6 +1,5 @@
 import { groq } from 'next-sanity'
 
-
 export const getPagePaths = groq`*[_type == "page" && defined(slug.current)][]{
   "params": { "slug": slug.current }
 }`

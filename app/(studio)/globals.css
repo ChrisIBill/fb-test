@@ -24,7 +24,7 @@ body {
 	justify-content: center;
 	padding: 1rem;
 
-	& > .component {	
+	& > .component {
 		width: 90%;
 		border: 1px solid #ccc;
 		padding: 1rem;
@@ -41,12 +41,12 @@ body {
 			border: 0;
 			border-top: 1px solid #ccc;
 		}
-	
+
 		& > .header {
 			display: flex;
 			gap: 1rem;
-			align-items: baseline;	
-	
+			align-items: baseline;
+
 			& > h2 {
 				font-family: Nickson-Two, sans-serif;
 				margin: 0;
@@ -54,26 +54,24 @@ body {
 				font-weight: 400;
 			}
 		}
-	
+
 		& > .content {
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
-	
+
 			& > p {
 				margin: 0;
 				font-size: 1rem;
 				line-height: 1.5;
-	
+
 				& > span {
 					margin-left: 0.5rem;
 				}
 			}
-			
 		}
 
 		& > .prices {
-
 			& > p {
 				margin: 0;
 				font-size: 1rem;

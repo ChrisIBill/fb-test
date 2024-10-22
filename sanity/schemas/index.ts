@@ -12,17 +12,15 @@ import seo from './components/seo-schema'
 import defaultImage from './objects/default-img-schema'
 import route from './objects/route-schema'
 
-
 const schemas = [
-  page,
-  navigation,
-  global,
-  location,
-  menu,
-  seo,
-  defaultImage,
-  route
+	page,
+	navigation,
+	global,
+	location,
+	menu,
+	seo,
+	defaultImage,
+	route,
 ]
-
 
 export default schemas

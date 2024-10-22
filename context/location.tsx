@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useState} from 'react'
+import { createContext, useState } from 'react'
 
 export type LocationContextType = {
 	locationContext: ILocationContext
@@ -19,7 +19,7 @@ const LocationContextProvider = ({ children }: any) => {
 	const [locationContext, setLocationContext] = useState<ILocationContext>({
 		_id: '0',
 		title: 'Choose Location',
-		description: ''
+		description: '',
 	})
 
 	const updateLocationContext = (state: ILocationContext): void => {
