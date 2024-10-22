@@ -16,15 +16,22 @@ export default defineType({
 			type: 'text',
 			rows: 6,
 		}),
+		defineField({
+			name: 'image',
+			title: 'Image',
+			type: 'defaultImage',
+		}),
 	],
 	preview: {
 		select: {
 			title: 'title',
+			image: 'image',
 		},
 		prepare(selection) {
-			const { title } = selection
+			const { title, image } = selection
 			return {
 				title: title,
+				media: image,
 			}
 		},
 	},
