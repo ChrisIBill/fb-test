@@ -14,6 +14,7 @@ import { PageType } from '@/types/documents/page-type'
 import { urlFor } from '@/components/sanity-image/url'
 import LocationsPage from '@/components/pages/locations-page'
 import { metadata as defaultMetadata } from '@/app/(site)/layout'
+import { getLocations } from '@/sanity/queries/location-query'
 
 export const generateMetadata = async (): Promise<Metadata> => {
 	const page = await client.fetch<PageType>(getPage, { slug: 'locations' })
@@ -59,6 +60,13 @@ export const generateMetadata = async (): Promise<Metadata> => {
 export default async function Home() {
 	const global = await client.fetch(getGlobal)
 	const navigation = await client.fetch(getNavigation)
+	const locations = await client.fetch(getLocations)
 
-	return <LocationsPage global={global} navigation={navigation} />
+	return (
+		<LocationsPage
+			global={global}
+			navigation={navigation}
+			locations={locations}
+		/>
+	)
 }
