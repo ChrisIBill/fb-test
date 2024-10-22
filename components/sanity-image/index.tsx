@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import { urlFor } from './url'
 
+const fallbackImageURL = '/fallback-image-HR.png'
+
 interface SanityImageProps {
 	source: {
 		asset: {
@@ -29,6 +31,22 @@ interface SanityImageProps {
 	className?: string
 }
 
+// export default function SanityImage({
+// 	source,
+// 	alt,
+// 	width,
+// 	height,
+// 	fill = false,
+// 	componentIndex = 1,
+// 	role = 'none',
+// 	sizes = '(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px',
+// 	className,
+// }: SanityImageProps) {
+//   return (
+//     <ErrorBoundary></ErrorBoundary>
+//   )
+// }
+
 export default function SanityImage({
 	source,
 	alt,
@@ -40,8 +58,24 @@ export default function SanityImage({
 	sizes = '(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px',
 	className,
 }: SanityImageProps) {
-	const imageUrl = source.asset.url
+	const imageUrl = source.asset ? source.asset.url : undefined
 
+	if (!imageUrl) {
+		return (
+			<img
+				className={className}
+				src={fallbackImageURL}
+				alt={alt}
+				width={fill ? undefined : width}
+				height={fill ? undefined : height}
+				role={role}
+				style={{
+					width: fill ? '100%' : undefined,
+					height: fill ? '100%' : undefined,
+				}}
+			/>
+		)
+	}
 	// Check if the image is an SVG
 	const isSvg = imageUrl.endsWith('.svg')
 
