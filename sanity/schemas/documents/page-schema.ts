@@ -23,6 +23,18 @@ export default defineType({
 			title: 'SEO',
 			type: 'seo',
 		}),
+		defineField({
+			name: 'featuredItem',
+			title: 'Featured Item',
+			type: 'reference',
+			to: [{ type: 'menu' }],
+			options: {
+				// Only display published documents
+				filter: '!(_id in path("drafts.**"))',
+				// Don't allow for new menu items to be created here
+				disableNew: true,
+			},
+		}),
 	],
 	preview: {
 		select: {

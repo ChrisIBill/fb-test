@@ -1,4 +1,5 @@
 import { SeoType } from '../components/seo-type'
+import { MenuType } from '@/types/documents/menu-type'
 
 export type PageType = {
 	_id: string
@@ -9,6 +10,7 @@ export type PageType = {
 	slug: {
 		current: string
 	}
+	featuredItem: MenuType
 	seo: SeoType
 	navigation: {
 		title: string
