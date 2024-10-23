@@ -1,8 +1,9 @@
 //import { LocationType } from '../types/documents/location-type'
+import { LocationType } from '@/types/documents/location-type'
 import { UpdateLocation } from './update-location'
 
 const HandleLocation = (
-	location: any, // change to LocationType
+	location: LocationType,
 	updateLocationContext: any,
 	setCookie: any,
 ) => {

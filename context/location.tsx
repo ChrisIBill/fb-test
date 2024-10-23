@@ -1,5 +1,6 @@
 'use client'
 
+import { DefaultImageType } from '@/types/objects/default-img-type'
 import { createContext, useState } from 'react'
 
 export type LocationContextType = {
@@ -10,6 +11,7 @@ export type LocationContextType = {
 export interface ILocationContext {
 	_id: string
 	title: string
+	image?: DefaultImageType
 	description?: string
 }
 

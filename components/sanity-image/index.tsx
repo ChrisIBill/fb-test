@@ -5,7 +5,7 @@ import { urlFor } from './url'
 const fallbackImageURL = '/fallback-image-HR.png'
 
 interface SanityImageProps {
-	source: {
+	source?: {
 		asset: {
 			url: string
 			metadata: {
@@ -31,22 +31,6 @@ interface SanityImageProps {
 	className?: string
 }
 
-// export default function SanityImage({
-// 	source,
-// 	alt,
-// 	width,
-// 	height,
-// 	fill = false,
-// 	componentIndex = 1,
-// 	role = 'none',
-// 	sizes = '(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px',
-// 	className,
-// }: SanityImageProps) {
-//   return (
-//     <ErrorBoundary></ErrorBoundary>
-//   )
-// }
-
 export default function SanityImage({
 	source,
 	alt,
@@ -58,14 +42,17 @@ export default function SanityImage({
 	sizes = '(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px',
 	className,
 }: SanityImageProps) {
-	const imageUrl = source.asset ? source.asset.url : undefined
+	//Depending on time, opting for wrapping a custom error boundary to handle image loading issues/errors
+	//would probably be the cleanest/best option, but try catch works pretty well for unstable components
+	const imageUrl = source?.asset?.url ?? undefined
 
-	if (!imageUrl) {
+	if (!imageUrl || !source) {
+		//if no image url or no source, return a fallback image, ideally
 		return (
 			<img
 				className={className}
 				src={fallbackImageURL}
-				alt={alt}
+				alt={alt ?? 'No image'}
 				width={fill ? undefined : width}
 				height={fill ? undefined : height}
 				role={role}
