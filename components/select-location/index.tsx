@@ -21,7 +21,8 @@ const LocationMenuSelect = ({ locations }: { locations: ILocationSelect }) => {
 	} // change to LocationType
 
 	useEffect(() => {
-		handleUpdateLocationContext(cookies.nearestLocation)
+		if (cookies.nearestLocation)
+			handleUpdateLocationContext(cookies.nearestLocation)
 	}, [])
 
 	/* === END LOCATION LOGIC === */
