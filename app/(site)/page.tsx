@@ -6,6 +6,7 @@ import { client } from '@/sanity/lib/client'
 import { getPage } from '@/sanity/queries/page-query'
 import { getGlobal } from '@/sanity/queries/global-query'
 import { getNavigation } from '@/sanity/queries/navigation-query'
+import { getLocations } from '@/sanity/queries/location-query'
 
 // Components
 import { urlFor } from '@/components/sanity-image/url'
@@ -50,6 +51,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
 export default async function Home() {
 	const global = await client.fetch(getGlobal)
 	const navigation = await client.fetch(getNavigation)
+	const locations = await client.fetch(getLocations)
 
-	return <HomePage global={global} navigation={navigation} />
+	return (
+		<HomePage global={global} navigation={navigation} locations={locations} />
+	)
 }
