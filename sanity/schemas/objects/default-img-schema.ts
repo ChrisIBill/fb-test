@@ -31,4 +31,8 @@ export default defineType({
 			}
 		},
 	},
+	validation: Rule =>
+		Rule.assetRequired().warning(
+			'An image for menu items is important, but not required',
+		),
 })

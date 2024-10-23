@@ -5,7 +5,7 @@ import { urlFor } from './url'
 const fallbackImageURL = '/fallback-image-HR.png'
 
 interface SanityImageProps {
-	source?: {
+	source: {
 		asset: {
 			url: string
 			metadata: {
@@ -44,7 +44,7 @@ export default function SanityImage({
 }: SanityImageProps) {
 	//Depending on time, opting for wrapping a custom error boundary to handle image loading issues/errors
 	//would probably be the cleanest/best option, but try catch works pretty well for unstable components
-	const imageUrl = source?.asset?.url ?? undefined
+	const imageUrl = source.asset?.url ?? undefined
 
 	if (!imageUrl || !source) {
 		//if no image url or no source, return a fallback image, ideally
