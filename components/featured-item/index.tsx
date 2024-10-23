@@ -19,10 +19,9 @@ const FeaturedItem: React.FC<{}> = () => {
 	//TODO: Return something if theres no featured item
 	if (!featuredItem) return null
 
-	//TODO: Better y margins for repositioning on diff screen sizes
 	return (
-		<section className='my-16 flex h-full grow flex-col items-center justify-center'>
-			<h1 className=''>Make sure to try our {featuredItem.title}</h1>
+		<section className='mt-16 flex w-3/4 grow flex-col items-center justify-center'>
+			<h1 className=''>Make sure to try our {featuredItem.title}!</h1>
 			<SanityImage
 				source={featuredItem.image}
 				alt={featuredItem.image.alt}
